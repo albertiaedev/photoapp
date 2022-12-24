@@ -31,9 +31,15 @@
     .list-group-item {
       color: #444c4c;
       background: #e899ae;
+      border-bottom: 2px solid #ed1c54;
     }
     .list-group-item:hover {
       color: #000;
+    }
+    a.list-group-item {
+      color: #444c4c;
+      background: #ed1c54;
+      text-decoration: none;
     }
     .card-img-thumbnail {
       height: 200px;
@@ -48,7 +54,7 @@
     }
     hr {
       margin: 40px;
-      color: #ed1c54;
+      border: 2px solid #ed1c54;
     }
     .head {
       text-align: center;
@@ -103,6 +109,7 @@
             <li class="list-group-item">Category</li>
             <li class="list-group-item">Category</li>
             <li class="list-group-item">Category</li>
+            <a href="{% url 'add' %}"class="list-group-item">Add Photo</a>
           </ul>
         </div>
       </div>
@@ -126,7 +133,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Cruz de Jesus</h5>
                   <a href="#" class="card-category">Other</a>
-                  <a href="{% url 'photo' 1 %}" class="btn btn-danger">View</a>
+                  <a href="{% url 'photo' 2 %}" class="btn btn-danger">View</a>
                   <a href="#" class="btn btn-danger">Delete</a>
                 </div>
               </div>
@@ -179,8 +186,6 @@
         </div>
       </div>
     </div>
-
-    <hr>
 
     <footer>
       <h2 class="copy">Copyright &copy; J.A. Hernández, 2022.</h2>

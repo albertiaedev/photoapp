@@ -106,9 +106,11 @@
           <ul class="list-group list-group-flush">
             <li class="sidebar-title">Your photos</li>
             <li class="list-group-item">All</li>
-            <li class="list-group-item">Category</li>
-            <li class="list-group-item">Category</li>
-            <li class="list-group-item">Category</li>
+
+            {% for category in categories%}
+            <li class="list-group-item">{{category.name}}</li>
+            {% endfor %}
+
             <a href="{% url 'add' %}"class="list-group-item">Add Photo</a>
           </ul>
         </div>

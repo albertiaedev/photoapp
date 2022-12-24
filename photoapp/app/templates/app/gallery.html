@@ -18,11 +18,19 @@
       font-family: 'Arial Black', sans-serif;
       background: #b6b8ba;
     }
-    .card-header {
-      background: #c26b82;
+    .sidebar-title{
+      background: #ed1c54;
+    }
+    .list-group {
+      position: fixed;
+      border: 2px solid #ed1c54;
     }
     .list-group-item {
+      color: #444c4c;
       background: #e899ae;
+    }
+    .list-group-item:hover {
+      color: #000;
     }
     .card-img-thumbnail {
       height: 200px;
@@ -32,11 +40,16 @@
     }
     .gallery-title {
       padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+    hr {
+      margin: 40px;
+      color: #ed1c54;
     }
     .head {
       text-align: center;
     }
-    .head h1, footer, hr {
+    .head h1, footer {
       padding-top: 20px;
       padding-bottom: 10px;
       color: #b6b8ba;
@@ -73,17 +86,15 @@
       <div class="row">
         <div class="col-md-3">
           <div class="card">
-          <div class="card-header">
-            <h4>YOUR PHOTOS</h4>
-          </div>
           <ul class="list-group list-group-flush">
+            <h4 class="sidebar-title">Your photos</h4>
             <li class="list-group-item">All</li>
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">Category</li>
+            <li class="list-group-item">Category</li>
+            <li class="list-group-item">Category</li>
           </ul>
         </div>
-        </div>
+      </div>
         <div class="col-md-9">
           <h4 class="gallery-title">GALLERY</h4>
           <div class="gallery-row">

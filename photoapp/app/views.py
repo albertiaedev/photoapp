@@ -13,4 +13,13 @@ def view_photo(request,pk):
     return render(request,'app/photo.html',context)
 
 def add_photo(request):
-    return render(request,'app/add.html')
+    categories = Category.objects.all()
+
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('image')
+        print('data:',data)
+        print('image:',image)
+
+    context = {'categories':categories}
+    return render(request,'app/add.html',context)

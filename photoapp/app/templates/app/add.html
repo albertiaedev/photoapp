@@ -41,7 +41,7 @@
       <a href="{% url 'gallery' %}" class="btn btn-danger">Back to your gallery</a>
       <div class="row justify-content-center m-5">
         <div class="col-md-4">
-          <div class="card" style="height: 90vh;">
+          <div class="card" style="height: 100vh;">
             <form method="POST" action="" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="mb-3">
@@ -63,8 +63,11 @@
               <div class="input-group">
                 <label for="formFile" class="form-label">Description</label>
               </div>
-              <textarea name="description" class="form-control"></textarea>
-              <button class="btn btn-danger" type="file" required>Search</button>
+              <textarea name="description" class="form-control" required></textarea>
+              <div class="form-group m-3">
+                <label>Search</label>
+                <input name="image" type="file" class="form-control-file" required>
+              </div>
               <button class="btn btn-danger" type="submit">Upload</button>
             </form>
           </div>

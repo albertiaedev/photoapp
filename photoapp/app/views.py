@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Category, Photo
 
 def gallery(request):
@@ -31,6 +31,8 @@ def add_photo(request):
             description=data['description'],
             image=image,
         )
+
+        return redirect('gallery')
 
     context = {'categories':categories}
     return render(request,'app/add.html',context)

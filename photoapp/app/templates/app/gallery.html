@@ -123,31 +123,9 @@
       </div>
         <div class="col-md-9">
           <h4 class="gallery-title">GALLERY</h4>
-          <div class="gallery-row">
-            <div class="col-md-12">
-              <div class="card">
-                <img src="https://lh3.googleusercontent.com/ci/AC_FhM_DqnY3HjBR52MWQTQ61UBAe1lS_ZOgXZvKy-nJLVSKlYbGj_sZVTmoJKF7D3HLJ4kuQ-NX=s1200" class="card-img-thumbnail" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">The Starry Night</h5>
-                  <a href="#" class="card-category">{{photo.category.name}}</a>
-                  <a href="{% url 'photo' 1 %}" class="btn btn-info">View</a>
-                  <a href="#" class="btn btn-info">Delete</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="card">
-                <img src="https://lh3.googleusercontent.com/ci/AC_FhM_DqnY3HjBR52MWQTQ61UBAe1lS_ZOgXZvKy-nJLVSKlYbGj_sZVTmoJKF7D3HLJ4kuQ-NX=s1200" class="card-img-thumbnail" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">The Starry Night</h5>
-                  <a href="#" class="card-category">{{photo.category.name}}</a>
-                  <a href="{% url 'photo' 1 %}" class="btn btn-info">View</a>
-                  <a href="#" class="btn btn-info">Delete</a>
-                </div>
-              </div>
 
             {% for photo in photos %}
-            <div class="col-md-12">
+            <div class="col-md-6">
               <div class="card">
                 <img src="{{photo.image.url}}" class="card-img-thumbnail" alt="...">
                 <div class="card-body">

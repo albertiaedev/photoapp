@@ -1,9 +1,9 @@
 # Use official base image of Python
-FROM python:3.9
+FROM python:3.11
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Install necessary packages
 RUN pip install --upgrade pip

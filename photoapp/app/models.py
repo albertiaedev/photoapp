@@ -19,7 +19,8 @@ class Photo(models.Model):
                                 default=True)
     image=models.ImageField(null=False,blank=False)
     description=models.TextField(max_length=300,null=False,blank=False)
-
+    date_added = models.DateTimeField(auto_now_add=True)
+    
     def __str__(self):
         return self.description
 

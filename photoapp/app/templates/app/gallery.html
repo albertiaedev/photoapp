@@ -99,6 +99,33 @@
       color: #fff;
       background: #000;
     }
+
+    /* Paginator */
+    .pagination {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .pagination a {
+        color: #fff;
+        background-color: #020827;
+        padding: 5px;
+        margin: 0 5px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .pagination a:hover {
+        color: #02e0f0;
+    }
+
+    .pagination .current {
+        font-weight: bold;
+        color: #020827;
+    }
   </style>
 
   <body>
@@ -151,7 +178,7 @@
       <span class="step-links">
           {% if photos.has_previous %}
               <a href="?page=1">&laquo; first</a>
-              <a href="?page={{ photos.previous_page_number }}">previous</a>
+              <a href="?page={{ photos.previous_page_number }}">prev</a>
           {% endif %}
   
           <span class="current">

@@ -1,10 +1,21 @@
 from django.shortcuts import render, redirect
 from .models import Category, Photo
 from django.db.models import Max
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def gallery(request):
     categories = Category.objects.all()
     photos = Photo.objects.all().order_by('-date_added')
+    paginator = Paginator(photos, 2)
+    page = request.GET.get('page')
+    try:
+        photos = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        photos = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        photos = paginator.page(paginator.num_pages)
     context = {'categories':categories,'photos':photos}
     return render(request,'app/gallery.html',context)
 

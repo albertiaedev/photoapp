@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Category, Photo
+from django.db.models import Max
 
 def gallery(request):
     categories = Category.objects.all()
-    photos = Photo.objects.all()
+    photos = Photo.objects.all().order_by('-date_added')
     context = {'categories':categories,'photos':photos}
     return render(request,'app/gallery.html',context)
 

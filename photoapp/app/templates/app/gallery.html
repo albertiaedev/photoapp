@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,108 +9,106 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   </head>
 
-  <style media="screen">
+  <style>
     * {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Arial Black', sans-serif;
-      background: #fff;
-    }
-    .sidebar-title{
-      background: #020827;
-      color: #fff;
-      font-size: 20px;
-      padding: 10px;
-      list-style: none;
-    }
-    .list-group {
-      position: relative;
-      border: 2px solid #020827;
-    }
-    .list-group-item {
-      color: #fff;
-      background: #2c345c;
-      border-bottom: 2px solid #020827;
-      padding: 20px;
-    }
-    .list-group-item:hover {
-      color: #02e0f0;
-    }
-    a.list-group-item {
-      color: #fff;
-      background: #020827;
-      text-decoration: none;
-    }
-    .card {
-      margin-top: 20px;
-    }
-    .card-img-thumbnail {
-      height: 200px;
-      object-fit: cover;
-    }
-    .card-body {
-      background: #2c345c;
-      color: #fff;
-    }
-    .col-md-12 {
-      padding: 10px;
-    }
-    .gallery-title {
-      padding-bottom: 30px;
-      margin-bottom: 30px;
-    }
-    hr {
-      margin: 40px;
-      border: 2px solid #020827;
-    }
-    .head {
-      text-align: center;
-    }
-    .head h1, footer {
-      padding-top: 20px;
-      padding-bottom: 10px;
-      color: #fff;
-      background: #020827;
-    }
-    .col-md-3, .col-md-9, .copy {
-      text-align: center;
-      font-weight: bolder;
-      padding: 40px;
-    }
-    .card-category {
-      padding: 30px;
-      margin-bottom: 10px;
-      color: #02e0f0;
-      text-decoration: none;
-    }
-    .btn {
-      margin: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .card-category:hover {
-      color: #000;
-      text-decoration: underline #000;
-    }
-    .btn:hover {
-      color: #fff;
-      background: #000;
-    }
-
-    /* Paginator */
-    .pagination {
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Arial Black', sans-serif;
+        background: #fff;
+      }
+      .sidebar-title{
+        background: #020827;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+        list-style: none;
+      }
+      .list-group {
+        position: relative;
+        border: 2px solid #020827;
+      }
+      .list-group-item {
+        color: #fff;
+        background: #2c345c;
+        border-bottom: 2px solid #020827;
+        padding: 20px;
+      }
+      .list-group-item:hover {
+        color: #02e0f0;
+      }
+      a.list-group-item {
+        color: #fff;
+        background: #020827;
+        text-decoration: none;
+      }
+      .card {
+        margin-top: 20px;
+      }
+      .card-img-thumbnail {
+        height: 200px;
+        object-fit: cover;
+      }
+      .card-body {
+        background: #2c345c;
+        color: #fff;
+      }
+      .col-md-12 {
+        padding: 10px;
+      }
+      .gallery-title {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+      }
+      hr {
+        margin: 40px;
+        border: 2px solid #020827;
+      }
+      .head {
+        text-align: center;
+      }
+      .head h1, footer {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        color: #fff;
+        background: #020827;
+      }
+      .col-md-3, .col-md-9, .copy {
+        text-align: center;
+        font-weight: bolder;
+        padding: 40px;
+      }
+      .card-category {
+        padding: 30px;
+        margin-bottom: 10px;
+        color: #02e0f0;
+        text-decoration: none;
+      }
+      .btn {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card-category:hover {
+        color: #000;
+        text-decoration: underline #000;
+      }
+      .btn:hover {
+        color: #fff;
+        background: #000;
+      }
+      /* Paginator */
+      .pagination {
         background-color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 30px;
-    }
-
-    .pagination a {
+      }
+      .pagination a {
         color: #fff;
         background-color: #020827;
         padding: 10px;
@@ -117,16 +116,14 @@
         border-radius: 20px;
         font-weight: bold;
         text-decoration: none;
-    }
-
-    .pagination a:hover {
+      }
+      .pagination a:hover {
         color: #02e0f0;
-    }
-
-    .pagination .current {
+      }
+      .pagination .current {
         font-weight: bold;
         color: #020827;
-    }
+      }
   </style>
 
   <body>
@@ -144,7 +141,7 @@
             <li class="sidebar-title">Your photos</li>
             <li class="list-group-item">All</li>
 
-            {% for category in categories%}
+            {% for category in categories %}
             <li class="list-group-item">{{category.name}}</li>
             {% endfor %}
 
@@ -163,8 +160,8 @@
                   <h5 class="card-title">{{photo.image.name}}</h5>
                   <a href="#" class="card-category">Category: {{photo.category.name}}</a>
                   <a href="{% url 'photo' photo.id %}" class="btn btn-info">View</a>
-                  <a href="#" class="btn btn-info">Delete</a>
-                  <a href="#" class="btn btn-info">Edit</a>
+                  <a href="{% url 'delete' %}?photo_id={{ photo.id }}" class="btn btn-info">Delete</a>
+                  <a href="{% url 'edit' %}?photo_id={{ photo.id }}" class="btn btn-info">Edit</a>
                 </div>
               </div>
             </div>
@@ -183,7 +180,7 @@
           {% endif %}
   
           <span class="current">
-              Page {{ photos.number }} of {{ photos.paginator.num_pages }}.
+              Page {{ photos.number }} of {{ photos.paginator.num_pages }}
           </span>
   
           {% if photos.has_next %}

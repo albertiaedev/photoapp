@@ -60,10 +60,7 @@ def delete_photo(request):
             photo_id = request.GET.get('photo_id')
             if photo_id:
                 photo = Photo.objects.get(id=photo_id)
-                return render(request, 'delete.html', {'photo': photo})
-
-    photos = Photo.objects.all()
-    return render(request, 'delete.html', {'photos': photos})
+                return render(request, 'app/delete.html', {'photo': photo})
 
 def edit_photo(request):
     if request.method == 'POST':
@@ -77,6 +74,6 @@ def edit_photo(request):
         photo_id = request.GET.get('photo_id')
         if photo_id:
             photo = Photo.objects.get(id=photo_id)
-            return render(request, 'edit.html', {'photo': photo})
+            return render(request, 'app/edit.html', {'photo': photo})
 
     return redirect('gallery')

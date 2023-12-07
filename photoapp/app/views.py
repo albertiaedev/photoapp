@@ -48,3 +48,35 @@ def add_photo(request):
 
     context = {'categories':categories}
     return render(request,'app/add.html',context)
+
+def delete_photo(request):
+    if request.method == 'POST':
+        photo_id = request.POST.get('photo_id')
+        if photo_id:
+            photo = Photo.objects.get(id=photo_id)
+            photo.delete()
+            return redirect('gallery')
+        elif request.method == 'GET':
+            photo_id = request.GET.get('photo_id')
+            if photo_id:
+                photo = Photo.objects.get(id=photo_id)
+                return render(request, 'delete.html', {'photo': photo})
+
+    photos = Photo.objects.all()
+    return render(request, 'delete.html', {'photos': photos})
+
+def edit_photo(request):
+    if request.method == 'POST':
+        photo_id = request.POST.get('photo_id')
+        if photo_id:
+            photo = Photo.objects.get(id=photo_id)
+            photo.description = request.POST.get('description')
+            photo.save()
+            return redirect('gallery')
+    elif request.method == 'GET':
+        photo_id = request.GET.get('photo_id')
+        if photo_id:
+            photo = Photo.objects.get(id=photo_id)
+            return render(request, 'edit.html', {'photo': photo})
+
+    return redirect('gallery')

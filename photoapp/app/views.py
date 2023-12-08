@@ -77,14 +77,12 @@ def edit_photo(request):
             photo.description = request.POST.get('description')
             photo.save()
             return HttpResponse('Your photo has been edited successfully...')
-        elif Photo.DoesNotExist:
-            return HttpResponse("Photo does not exist.", status=404)
+        return HttpResponse("Photo does not exist.", status=404)
     elif request.method == 'GET':
         photo_id = request.GET.get('photo_id')
         if photo_id:
             photo = Photo.objects.get(id=photo_id)
             return render(request, 'app/edit.html', {'photo': photo})
-        elif Photo.DoesNotExist:
-            return HttpResponse("Photo does not exist.", status=404)
+        return HttpResponse("Photo does not exist.", status=404)
 
     return redirect('gallery')

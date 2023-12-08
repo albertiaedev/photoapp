@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import Category, Photo
 from django.db.models import Max
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -55,12 +56,18 @@ def delete_photo(request):
         if photo_id:
             photo = Photo.objects.get(id=photo_id)
             photo.delete()
-            return redirect('gallery')
-        elif request.method == 'GET':
-            photo_id = request.GET.get('photo_id')
-            if photo_id:
-                photo = Photo.objects.get(id=photo_id)
-                return render(request, 'app/delete.html', {'photo': photo})
+            return HttpResponse('Deleting photo...')
+        elif Photo.DoesNotExist:
+            return HttpResponse("Photo does not exist.", status=404)
+    elif request.method == 'GET':
+        photo_id = request.GET.get('photo_id')
+        if photo_id:
+            photo = Photo.objects.get(id=photo_id)
+            return render(request, 'app/delete.html', {'photo': photo})
+        elif Photo.DoesNotExist:
+            return HttpResponse("Photo does not exist.", status=404)
+
+    return redirect('gallery')
 
 def edit_photo(request):
     if request.method == 'POST':
@@ -69,11 +76,15 @@ def edit_photo(request):
             photo = Photo.objects.get(id=photo_id)
             photo.description = request.POST.get('description')
             photo.save()
-            return redirect('gallery')
+            return HttpResponse('Your photo has been edited successfully...')
+        elif Photo.DoesNotExist:
+            return HttpResponse("Photo does not exist.", status=404)
     elif request.method == 'GET':
         photo_id = request.GET.get('photo_id')
         if photo_id:
             photo = Photo.objects.get(id=photo_id)
             return render(request, 'app/edit.html', {'photo': photo})
+        elif Photo.DoesNotExist:
+            return HttpResponse("Photo does not exist.", status=404)
 
     return redirect('gallery')

@@ -3,7 +3,7 @@
 
  ### Tech Stack
 
- - Frontend: HTML, CSS & JavaScript.
+ - Frontend: HTML, CSS/Bootstrap & JavaScript.
  - Backend: Python/Django.
  - Database: SQLite.
 

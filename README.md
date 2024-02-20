@@ -6,6 +6,7 @@
  - Frontend: HTML, CSS/Bootstrap & JavaScript.
  - Backend: Python/Django.
  - Database: SQLite.
+ - Container: Docker.
 
  * <em>See ```requirements.txt``` to see versions of packages used in this project.</em>
 

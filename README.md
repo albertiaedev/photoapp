@@ -1,4 +1,4 @@
-# PHOTO STORAGE APP
+# WELCOME TO PHOTOAPP
 
 
  ### Tech Stack
@@ -19,11 +19,11 @@ The first thing you need to do is to open your terminal/cmd, access to the direc
 
 ### HTTPS
 
-```git clone https://github.com/jesusalberto18/django-photo-app.git```
+```git clone https://github.com/jesusalberto18/photoapp.git```
 
 ### SSH
 
-```git clone git@github.com:jesusalberto18/django-photo-app.git```
+```git clone git@github.com:jesusalberto18/photoapp.git```
 
 And that's it! It creates a local copy of this repository in your machine.
 
@@ -31,7 +31,7 @@ And that's it! It creates a local copy of this repository in your machine.
 
 Now that you have this repo in your local computer, you need to run the server to display the app on your browser...
 
-In the same terminal/cmd make sure that the repo is located in that folder and type ```cd django-photo-app``` and enter the repo.
+In the same terminal/cmd make sure that the repo is located in that folder and type ```cd photoapp``` and enter the repo.
 
 Once inside type ```python3 manage.py runserver```, then go to the next URL in your browser: ```localhost:8000``` or ```127.0.0.1:8000```
 

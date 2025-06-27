@@ -1,0 +1,17 @@
+version: '3.11'
+
+services:
+  django:
+    build: .
+    container_name: photoapp
+    command: bash -c "python photoapp/manage.py migrate && python photoapp/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+      - db_data:/app/db.sqlite3
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+
+volumes:
+  db_data:
